@@ -45,7 +45,7 @@ jobs:
 
       # --- الجزء الجديد الخاص بـ Netlify ---
       - name: Deploy to Netlify
-        uses: netlify/actions/cli@master
+        uses: nwtgck/actions-netlify@v3.0
         with:
           # بنحدد المسار اللي فيه الفولدر اللي طلع من الـ build
           # غالباً بيكون frontend/dist لو شغال Vite أو frontend/build لو React عادي
