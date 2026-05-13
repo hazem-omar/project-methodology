@@ -49,9 +49,7 @@ jobs:
         with:
           # بنحدد المسار اللي فيه الفولدر اللي طلع من الـ build
           # غالباً بيكون frontend/dist لو شغال Vite أو frontend/build لو React عادي
-          publish-dir: './dist'
-          production-deploy: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          args: deploy --dir=frontend/dist --prod 
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
