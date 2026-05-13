@@ -43,13 +43,10 @@ jobs:
       - name: Validate docker-compose syntax
         run: docker-compose config -q
 
-      # --- الجزء الجديد الخاص بـ Netlify ---
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          # بنحدد المسار اللي فيه الفولدر اللي طلع من الـ build
-          # غالباً بيكون frontend/dist لو شغال Vite أو frontend/build لو React عادي
-          args: deploy --dir=frontend/dist --prod 
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      # In a real scenario, you'd add steps here for running tests:
+      # - name: Run Backend Tests
+      #   working-directory: ./backend
+      #   run: npm test
+      # 
+      # - name: Build Docker Images (Dry Run)
+      #   run: docker-compose build
